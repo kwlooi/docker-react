@@ -10,4 +10,5 @@ RUN npm run build
 
 # run stage copies the build folder from the builder stage to a prod nginx container
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
